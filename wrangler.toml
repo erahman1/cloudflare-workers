@@ -5,7 +5,7 @@ compatibility_date = "2024-12-05"
 compatibility_flags = ["nodejs_compat"]
 
 #Routes configuration
-routes = [ { pattern = “tunnel.enamur.org/secure”, zone_id = "eaa4af108fc6fe3ea96717744c292c93" }
+routes = [ { pattern = “tunnel.enamur.org/secure/*”, zone_id = "eaa4af108fc6fe3ea96717744c292c93" }
 ]
 
 # Workers Logs
@@ -20,6 +20,15 @@ enabled = true
 # Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
 # [placement]
 # mode = "smart"
+
+# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#r2-buckets
+[[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+binding = "FLAGS_BUCKET"
+bucket_name = "flags"
+preview_bucket_name = "flags"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Docs:
@@ -99,14 +108,6 @@ enabled = true
 # [[queues.consumers]]
 # queue = "my-queue"
 
-# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
-# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#r2-buckets
-[[r2_buckets]]
-# binding = "MY_BUCKET"
-# bucket_name = "my-bucket"
-binding = "FLAGS_BUCKET"
-bucket_name = "flags"
-preview_bucket_name = "flags"
 
 # Bind another Worker service. Use this binding to call another Worker without network overhead.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
