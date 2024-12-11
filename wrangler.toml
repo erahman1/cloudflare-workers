@@ -5,7 +5,7 @@ compatibility_date = "2024-12-05"
 compatibility_flags = ["nodejs_compat"]
 
 #Routes configuration
-routes = [ { pattern = “tunnel.enamur.org/secure/*”, zone_id = "eaa4af108fc6fe3ea96717744c292c93" }
+routes = [ { pattern = “tunnel.enamur.org/secure/*”, zone_id = "ZONE_ID" }
 ]
 
 # Workers Logs
