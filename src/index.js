@@ -25,7 +25,7 @@ export default {
       const TIMESTAMP = new Date().toISOString();
   
       // Ensure the Worker responds to the `/secure` path
-      if (path === "/secure") {
+      if (path === "/secure/") {
         return new Response(
           `<html>
             <body>
@@ -66,6 +66,3 @@ export default {
       // Add custom logic for scheduled tasks
     },
   };
-  
-
-
