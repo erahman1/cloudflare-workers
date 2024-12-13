@@ -9,4 +9,4 @@ Flag .svg files have been imported in a R2 "flags" bucket.
 The structure is as follows
 /cloudflare-worker/
 - wrangler.toml #config file
--- /src/index.ts #script handles request including a scheduled event (CORS triggers)
+-- /src/index.js #script handles request including a scheduled event (CORS triggers)
